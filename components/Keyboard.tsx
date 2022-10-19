@@ -1,4 +1,4 @@
-import Backspace from '../icons/backspace'
+import Backspace from '../icons/Backspace'
 
 const rows = [
   ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
@@ -8,14 +8,14 @@ const rows = [
 
 export default function Keyboard() {
   return (
-    <div className="fixed bottom-0 flex flex-col items-center gap-1 w-[90vw] max-w-[500px] h-fit">
+    <div className="fixed bottom-4 flex flex-col items-center gap-1 w-[90vw] max-w-[500px] h-fit">
       <div className="grid grid-flow-col gap-1 w-[90vw] max-w-[500px] h-fit">
         {rows[0].map((key) => (
           <div
             key={key}
             className="bg-[#818384] rounded-sm flex items-center justify-center capitalize p-1"
             style={{
-              aspectRatio: 1,
+              aspectRatio: 1 / 1.2,
             }}
           >
             <p className="text-white w-[18px] flex items-center justify-center font-semibold">
@@ -31,7 +31,7 @@ export default function Keyboard() {
             key={key}
             className="bg-[#818384] rounded-sm flex items-center justify-center capitalize p-1 col-span-2"
             style={{
-              aspectRatio: 1,
+              aspectRatio: 1 / 1.2,
             }}
           >
             <p className="text-white w-[18px] flex items-center justify-center font-semibold">
@@ -54,7 +54,7 @@ export default function Keyboard() {
               key === 'Backspace' || key === 'Enter'
                 ? {}
                 : {
-                    aspectRatio: 1,
+                    aspectRatio: 1 / 1.2,
                   }
             }
           >
