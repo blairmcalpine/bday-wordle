@@ -8,6 +8,13 @@ body {
   height: 100%;
 }
 
+#__next {
+  height: 100%;
+}
+
+body {
+  background-color: #121213;
+}
 @font-face {
   font-family: "HelveticaNeueLT Std";
   src: url("/Helvetica Neue LT Std 75 Bold.otf") format("otf");
