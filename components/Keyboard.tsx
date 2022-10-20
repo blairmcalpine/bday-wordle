@@ -15,7 +15,7 @@ interface KeyboardProps {
 
 export default function Keyboard({ onKeypress, letterColours }: KeyboardProps) {
   return (
-    <div className="flex flex-col items-center gap-1 w-[90vw] max-w-[500px] h-[15dvh] bg-darkGray justify-center">
+    <div className="flex flex-col items-center gap-1 w-[90vw] max-w-[500px] h-[15vh] bg-darkGray justify-center">
       {rows.map((row, idx) => (
         <div
           className="grid grid-flow-col gap-1 w-[90vw] max-w-[500px] h-fit"

@@ -65,10 +65,10 @@ export default function Screen({ message, word, pushPath }: ScreenProps) {
   }
   return (
     <div className="w-full h-[88vh] flex flex-col items-center fixed bottom-8">
-      <div className="flex items-center justify-center w-full h-[3dvh]">
+      <div className="flex items-center justify-center w-full h-[3vh]">
         <p className="text-white font-bold text-xl">{message}</p>
       </div>
-      <div className="h-full w-full max-h-[70dvh] overflow-y-auto flex items-center justify-center flex-col gap-10">
+      <div className="h-full w-full max-h-[70vh] overflow-y-auto flex items-center justify-center flex-col gap-10">
         <Board
           guesses={guesses}
           correct={showButton}
