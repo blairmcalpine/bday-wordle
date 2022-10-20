@@ -7,7 +7,7 @@ import { ColourMap, Colours } from './PastGuess'
 interface ScreenProps {
   message: string
   word: string
-  pushPath?: string
+  pushPath: string
 }
 
 export interface KeyboardColours {
@@ -68,7 +68,7 @@ export default function Screen({ message, word, pushPath }: ScreenProps) {
       <div className="flex items-center justify-center w-full h-[3dvh]">
         <p className="text-white font-bold text-xl">{message}</p>
       </div>
-      <div className="h-full w-full max-h-[82dvh] overflow-y-auto flex items-center justify-center flex-col gap-10">
+      <div className="h-full w-full max-h-[80dvh] overflow-y-auto flex items-center justify-center flex-col gap-10">
         <Board
           guesses={guesses}
           correct={showButton}
@@ -76,7 +76,7 @@ export default function Screen({ message, word, pushPath }: ScreenProps) {
           onKeypress={onKeypress}
           currentGuess={currentGuess}
         />
-        {showButton && pushPath && (
+        {showButton && (
           <button
             className={`text-white py-4 px-6 rounded-sm border-lightGray border font-bold ${
               ColourMap[Colours.GREEN]
