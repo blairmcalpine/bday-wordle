@@ -1,22 +1,22 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import CurrentGuess from './CurrentGuess'
 import PastGuess from './PastGuess'
 
 interface BoardProps {
   word: string
-  onCorrect: () => void
+  onKeypress: (key: string) => void
+  currentGuess: string
+  guesses: string[]
+  correct: boolean
 }
 
-export default function Board({ word, onCorrect }: BoardProps) {
-  const [guesses, setGuesses] = useState<Array<string>>([])
-  const [correct, setCorrect] = useState(false)
-  function onSubmit(guess: string) {
-    setGuesses((guesses) => [...guesses, guess])
-    if (guess === word) {
-      setCorrect(true)
-      onCorrect()
-    }
-  }
+export default function Board({
+  word,
+  onKeypress,
+  currentGuess,
+  guesses,
+  correct,
+}: BoardProps) {
   return (
     <div className="flex flex-col gap-[5px]">
       {guesses.map((guess, index) => (
@@ -24,7 +24,13 @@ export default function Board({ word, onCorrect }: BoardProps) {
           <PastGuess guess={guess} correct={word} />
         </Fragment>
       ))}
-      {!correct && <CurrentGuess size={word.length} onSubmit={onSubmit} />}
+      {!correct && (
+        <CurrentGuess
+          size={word.length}
+          onKeypress={onKeypress}
+          currentGuess={currentGuess}
+        />
+      )}
     </div>
   )
 }

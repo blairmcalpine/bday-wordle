@@ -1,33 +1,20 @@
-import { useRef, useState } from 'react'
 import useKeyPress from '../hooks/useKeyPress'
 
 interface CurrentGuessProps {
   size: number
-  onSubmit: (guess: string) => void
+  onKeypress: (key: string) => void
+  currentGuess: string
 }
 
-export default function CurrentGuess({ size, onSubmit }: CurrentGuessProps) {
-  const [letters, setLetters] = useState<string>('')
-  const stateRef = useRef<string>('')
-  stateRef.current = letters
-  useKeyPress((key: string) => {
-    if (
-      stateRef.current.length < size &&
-      key.length == 1 &&
-      key.charCodeAt(0) >= 97 &&
-      key.charCodeAt(0) <= 122
-    ) {
-      setLetters((letters) => letters + key)
-    } else if (key === 'Backspace') {
-      setLetters((letters) => letters.slice(0, -1))
-    } else if (key === 'Enter' && stateRef.current.length === size) {
-      setLetters('')
-      onSubmit(stateRef.current)
-    }
-  })
+export default function CurrentGuess({
+  size,
+  onKeypress,
+  currentGuess,
+}: CurrentGuessProps) {
+  useKeyPress(onKeypress)
   return (
     <div className="flex gap-[5px]">
-      {Array.from(letters).map((letter, index) => (
+      {Array.from(currentGuess).map((letter, index) => (
         <div
           key={index}
           className="h-[62px] w-[62px] bg-darkGray border-2 border-lightGray flex items-center justify-center"
@@ -43,8 +30,8 @@ export default function CurrentGuess({ size, onSubmit }: CurrentGuessProps) {
           </p>
         </div>
       ))}
-      {letters.length < size &&
-        Array.from(Array(size - letters.length)).map((_, index) => (
+      {currentGuess.length < size &&
+        Array.from(Array(size - currentGuess.length)).map((_, index) => (
           <div
             key={index}
             className="h-[62px] w-[62px] bg-darkGray border-2 border-lightGray"
