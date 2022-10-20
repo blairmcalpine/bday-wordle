@@ -64,7 +64,7 @@ export default function Screen({ message, word, pushPath }: ScreenProps) {
     }
   }
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <div className="w-full h-[88vh] flex flex-col items-center fixed bottom-8">
       <div className="flex items-center justify-center w-full h-[3dvh]">
         <p className="text-white font-bold text-xl">{message}</p>
       </div>
