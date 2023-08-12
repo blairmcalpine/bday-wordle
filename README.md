@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/blairmcalpine/bday-wordle/assets/97198784/d36f2643-ed95-4980-be07-486b81416cf3" alt="BDay Wordle Logo"></img>
+  <img src="https://github.com/blairmcalpine/bday-wordle/assets/97198784/1a0b655c-1333-4a9f-9ced-5a1b73b624a4" alt="BDay Wordle Logo"></img>
 </p>
 # BDay Wordle
 
