@@ -1,4 +1,8 @@
+<p align="center">
+  <img src="https://github.com/blairmcalpine/bday-wordle/assets/97198784/d36f2643-ed95-4980-be07-486b81416cf3" alt="BDay Wordle Logo"></img>
+</p>
 # BDay Wordle
+![image](https://github.com/blairmcalpine/bday-wordle/assets/97198784/d36f2643-ed95-4980-be07-486b81416cf3)
 
 This is a [Next.js](https://nextjs.org) project based on the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). It is hosted on [Vercel](https://bday-wordle.vercel.app) for anyone to try out!
 
